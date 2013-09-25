@@ -19,95 +19,57 @@
 	</header>
 	
 	<article id="content" class="col">
-		<section data-route="schedule" class="active">
-			<header>
-                <h1 data-bind="title"></h1>
-            </header>
-            <table data-bind="tabl">
+        <section data-route="schedule" class="active">
+            <h1 data-bind="title"></h1>           
+            <table>
                 <tr>
-                    <th data-bind="date"></th>
-                    <th data-bind="team1"></th>
-                    <th data-bind="team1Score"></th>
-                    <th data-bind="team2"></th>
-                    <th data-bind="team2Score"></th>
+                    <th data-bind="today"></th>
+                    <th>Team</th>
+                    <th>Result</th>
+                    <th>Team</th>
+                </tr>
+                <tbody data-bind="schedule">
+                    <tr>
+                        <td data-bind="date"></td>
+                        <td data-bind="team1"></td>
+                        <td><span data-bind="team1Score"></span> - <span data-bind="team2Score"></span></td>
+                        <td data-bind="team2"></td>
+                    </tr>
+                </tbody>
+            </table>              
+        </section>
+
+		<section data-route="game">
+			<h1 data-bind="title"></h1>
+            <table>
+                <tr>
+                    <th>Team</th>
+                    <th>Result</th>
+                    <th>Team</th>
                 </tr>
 
                 <tr>
-                    <td data-bind="date"></td>
-                    <td data-bind="team1" class="winner"></td>
-                    <td data-bind="result"></td>
-                    <td data-bind="team2"></td>
-                </tr>
-
-                <tr>
-                    <td>Monday, 9:00am</td>
-                    <td class="winner">Boomsquad</td>
-                    <td>15 - 11</td>
-                    <td>Beast Amsterdam</td>
-                </tr>
-
-                <tr>
-                    <td>Monday, 10:00am</td>
-                    <td class="winner">Beast Amsterdam</td>
-                    <td>14 - 12</td>
-                    <td>Amsterdam Money Gang</td>
-                </tr>
-
-                <tr>
-                    <td>Monday, 10:00am</td>
-                    <td>Chasing</td>
-                    <td>5 - 15</td>
-                    <td class="winner">Burning Snow</td>
-                </tr>
-
-                <tr>
-                    <td>Monday, 11:00am</td>
-                    <td>Boomsquad</td>
-                    <td>11 - 15</td>
-                    <td class="winner">Amsterdam Money Gang</td>
-                </tr>
-
-                <tr>
-                    <td>Monday, 11:00am</td>
-                    <td class="winner">Burning Snow</td>
-                    <td>15 - 6</td>
-                    <td>Beast Amsterdam</td>
-                </tr>
-
-                <tr>
-                    <td>Monday, 12:00pm</td>
-                    <td>Chasing</td>
-                    <td>8 - 15</td>
-                    <td class="winner">Beast Amsterdam</td>
-                </tr>
-
-                <tr>
-                    <td>Monday, 12:00pm</td>
                     <td class="winner">Boomsquad</td>
                     <td>15 - 8</td>
                     <td>Burning Snow</td>
                 </tr>
-
-                <tr>
-                    <td>Monday, 13:00pm</td>
-                    <td class="winner">Chasing</td>
-                    <td>15 - 14</td>
-                    <td>Boomsquad</td>
-                </tr>
-
-                <tr>
-                    <td>Monday, 13:00pm</td>
-                    <td class="winner">Burning Snow</td>
-                    <td>15 - 11</td>
-                    <td>Amsterdam Money Gang</td>
-                </tr>
-
             </table>
-		</section>
 
-		<section data-route="game">
-			<h1 data-bind="title"></h1>
-			<p data-bind="description"></p>
+            <table data-bind="gamesummary">
+                <tr>
+                    <th>Score</th>
+                    <th>Team</th>
+                    <th>Points</th>
+                    <th>Team</th>
+                </tr>
+
+                <tr>
+                    <td data-bind="score"></td>
+                    <td data-bind="team1"></td>
+                    <td><span data-bind="team1Score"></span> - <span data-bind="team2Score"></span></td>
+                    <td data-bind="team2"></td>
+                </tr>
+            </table>
 		</section>
 
 		<section data-route="ranking">
