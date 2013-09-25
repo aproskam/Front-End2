@@ -35,6 +35,25 @@ nav ol li a:hover{
 	background-color: rgba(100, 200, 100, 0.4);
 }
 
+/* Content section */
+article#content {
+	clear:left;
+}
+	article > section {
+		display:none;
+	}
+	article > section.active {
+		display:block;
+	}
+	article h1 {
+		margin-bottom: .5em;
+	}
+
+	article ul {
+		list-style: none;
+		margin-bottom:3em;
+	}
+
 /* Table */
 table{
 	width: 80%;
