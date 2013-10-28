@@ -62,7 +62,6 @@ var APP = APP || {};
 	// Controller Init
 	APP.controller = {
 		init: function () {
-			console.log("step 2: controller");
 			// Initialize router
 			APP.router.init();
 		}
@@ -71,7 +70,6 @@ var APP = APP || {};
 	// Router
 	APP.router = {
 		init: function () {
-			console.log("step 3: router");
 	  		routie({
 			    '/schedule': function() {
 			    	APP.page.schedule();
@@ -90,8 +88,6 @@ var APP = APP || {};
 		},
 
 		change: function () {
-			console.log("step 4: ");
-			console.log("step 5: ");
             var route = window.location.hash.slice(2),
                 sections = qwery('section[data-route]'),
                 section = qwery('[data-route=' + route + ']')[0];  
@@ -117,23 +113,19 @@ var APP = APP || {};
 		schedule: function () {
 			Transparency.render(qwery('[data-route=schedule')[0], APP.schedule);
 			APP.router.change();
-			console.log("step 6.1:");
 		},
 
 		game: function () {
 			Transparency.render(qwery('[data-route=game')[0], APP.game);
 			APP.router.change();
-			console.log("step 6.2:");
 		},
 
 		ranking: function () {
 			Transparency.render(qwery('[data-route=ranking')[0], APP.ranking);
 			APP.router.change();
-			console.log("step 6.3:");
 		}
 	}
 	// DOM ready
-	console.log("step 1: DOM ready");
 	domready(function () {
 		// Kickstart application
 		APP.controller.init();
